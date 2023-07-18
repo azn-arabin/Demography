@@ -1,5 +1,5 @@
-import validateInputs from "../helper/demography";
-import connectToDatabase from "../helper/db";
+import validateInputs from "../../src/helper/demography";
+import connectToDatabase from "../../src/helper/db";
 
 const DEBUG = false;
 const currentYear = 2011;
