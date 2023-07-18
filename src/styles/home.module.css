@@ -1,0 +1,290 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 15px;
+}
+
+.form {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.inputGroup > label {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.input {
+  width: 250px;
+  padding: 10px 12px;
+  border: 2px solid var(--border-color);
+  background-color: var(--second-bg);
+  border-radius: 10px;
+  font-size: 18px;
+  transition: all 0.05s ease;
+  height: 48px;
+}
+
+.input:focus {
+  color: var(--text-color);
+  border-radius: 10px;
+  outline: 2px solid var(--nav-bg);
+  border: 2px solid var(--border-color);
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.errorInput {
+  border: 2px solid red;
+}
+
+.errorInput:focus {
+  outline: 2px solid red;
+  border: 2px solid red;
+}
+
+.errorsContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.errorContainer {
+  width: 250px;
+}
+
+.error {
+  color: red;
+  padding-left: 5px;
+}
+
+.smSrnErr {
+  display: none;
+}
+
+.error:before {
+  content: "⚠ ";
+}
+
+.populations {
+  display: flex;
+  gap: 20px;
+}
+
+.population {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 30px;
+  background-color: var(--second-bg);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.population > h2 {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  color: var(--selected-color);
+}
+
+.population > span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.chartContainer {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.chartTitle {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.chartTitle > h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.chartInput {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  z-index: 0;
+}
+
+.chartInput > select {
+  width: auto;
+}
+
+.rechartsWrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.dependence {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.dTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+.dTitles > h2 {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.dTitles > span {
+  font-weight: 500;
+}
+
+.dContents {
+  display: flex;
+  gap: 20px;
+}
+
+.dContents > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 50%;
+}
+
+.dCTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.dCTitle > h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 550;
+}
+
+.dContent {
+  padding: 30px;
+  background-color: var(--second-bg);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 480;
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 100%;
+  }
+
+  .inputGroup {
+    width: 100%;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .errorsContainer {
+    display: none;
+  }
+
+  .smSrnErr {
+    display: inline-block;
+    margin-top: -8px;
+  }
+
+  .homeButton {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .populations {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .population {
+    width: 100%;
+  }
+
+  .dependence {
+    margin-top: 15px;
+  }
+
+  .dContents {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .dContents > div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .inputGroup > label {
+    font-size: 15px;
+  }
+
+  .input {
+    font-size: 15px;
+  }
+
+  .chartTitle > h3 {
+    font-size: 15px;
+  }
+
+  .chartInput {
+    font-size: 15px;
+    gap: 5px;
+  }
+}

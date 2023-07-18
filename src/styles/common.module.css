@@ -1,0 +1,146 @@
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  justify-content: space-between;
+}
+
+.navWrapper {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  text-transform: uppercase;
+  padding: 12px 0;
+  width: 100%;
+  transition: all 0.35s ease;
+  position: fixed;
+  z-index: 1;
+}
+
+.navLeft {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navCollapse {
+  display: flex;
+  gap: 10px;
+}
+
+.showNav,
+.hideNav {
+  display: none;
+}
+
+.brand {
+  display: flex;
+  gap: 5px;
+  font-weight: bold;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  font-weight: 450;
+  transition: all 0.35s ease;
+  border-radius: 10px;
+  margin: 0 2px;
+}
+
+.option:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--selected-color);
+}
+
+.navToggle {
+  font-size: 20px !important;
+  padding: 8px 10px !important;
+  border-radius: 6px !important;
+  display: none !important;
+  background-color: var(--toggle-bg) !important;
+  transition: all 0.35s ease;
+  color: var(--nav-text) !important;
+}
+
+.navToggle:hover {
+  background-color: var(--toggle-hover) !important;
+}
+
+.layout {
+  padding: 80px 0;
+  width: 100%;
+}
+
+.blur1 {
+  background-color: rgba(255, 167, 38, 0.15);
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  border-radius: 50%;
+  filter: blur(72px);
+  top: 18%;
+  left: -20%;
+}
+
+.blur2 {
+  background-color: rgba(77, 255, 172, 0.15);
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  border-radius: 50%;
+  filter: blur(72px);
+  top: 10%;
+  right: -20%;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  padding: 30px 10px;
+  background-color: var(--second-bg);
+}
+
+@media (max-width: 767px) {
+  .navCollapse {
+    display: none;
+  }
+
+  .showNav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .navToggle {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .blur1 {
+    left: 0;
+  }
+
+  .blur2 {
+    right: 0;
+  }
+}
