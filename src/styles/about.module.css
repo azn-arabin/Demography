@@ -50,7 +50,8 @@
 
 .introductions {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .introduction {
@@ -82,13 +83,6 @@
     width: 100%;
     border: 2px solid var(--border-color);
     border-radius: 15px;
-  }
-}
-
-@media (max-width: 767px) {
-  .introductions {
-    flex-direction: column;
-    gap: 15px;
   }
 }
 

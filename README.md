@@ -74,7 +74,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Credits
 
-Supervisor: [Dr. Mamun-Ur-Rashid Khandker](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
+Supervisor: [Prof. Dr. Mamun-Ur-Rashid Khandker](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
 
 ## Contact
 
