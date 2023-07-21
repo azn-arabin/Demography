@@ -43,7 +43,6 @@ visualization and population trend analysis.
 1. Clone the repository:
    ```bash
    git clone https://github.com/arabin1/demography.git
-   cd demography
    ```
    Make sure you have the following packages installed on your machine.
 

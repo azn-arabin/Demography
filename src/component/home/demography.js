@@ -8,8 +8,8 @@ import { ClipLoader } from "react-spinners";
 import Populations from "@/component/home/populations";
 import Dependence from "@/component/home/dependence";
 import InputErrors from "@/component/home/input-errors";
-import { analytics } from "@/app/layout";
 import { logEvent } from "firebase/analytics";
+import { analytics } from "@/component/common/navbar";
 
 const Demography = () => {
   const [loading, setLoading] = useState(false);

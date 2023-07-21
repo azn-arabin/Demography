@@ -11,6 +11,17 @@ import {
   faXmark as faXMark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "@/config/firebase";
+import { getAnalytics } from "firebase/analytics";
+
+const app = initializeApp(firebaseConfig);
+
+export let analytics;
+
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app);
+}
 
 const Navbar = () => {
   const [showNavs, setShowNavs] = useState(false);
