@@ -26,6 +26,10 @@ const Contact = () => {
       );
     } else {
       try {
+        if (typeof window !== "undefined" && !window.navigator.onLine) {
+          throw new Error("No Internet connection!");
+        }
+
         const response = await fetch("/api/sendgrid", {
           body: JSON.stringify({
             ...data,
@@ -49,13 +53,7 @@ const Contact = () => {
           );
         }
       } catch (e) {
-        console.log(e);
-        if (e.response) {
-          toastHandler(
-            "Something went wrong, Please try again later!",
-            "error"
-          );
-        } else if (e.request) {
+        if (e.message === "No Internet connection!") {
           toastHandler("No Internet connection!", "warning");
         } else {
           toastHandler(
