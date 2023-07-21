@@ -1,0 +1,155 @@
+.contact {
+  display: flex;
+  width: 100%;
+}
+
+.leftSide {
+  width: 50%;
+  min-height: 100%;
+  background: url("/images/image1.jpg") no-repeat center;
+  background-size: cover;
+  border-radius: 15px 0 0 15px;
+  z-index: -1;
+}
+
+.leftSide > .green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--selected-color);
+  font-size: 70px;
+  width: 100%;
+  height: 100%;
+  background-color: #008000a0;
+  border-radius: 15px 0 0 15px;
+}
+
+.green > span {
+  font-size: 18px;
+  color: var(--nav-text);
+}
+
+.form {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: 50%;
+  padding: 60px 40px;
+  border: 2px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 15px 15px 0;
+}
+
+.formTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.formTitles > h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.formTitles > h4 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.oneLineInputs {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.oneLineInputs > * {
+  flex: 1;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.inputGroup > textarea {
+  height: 100px;
+  font-family: inherit;
+}
+
+.inputGroup > label {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--second-bg);
+  border-radius: 10px;
+  font-size: 18px;
+  transition: all 0.05s ease;
+  height: 48px;
+  z-index: 0;
+}
+
+.input:focus {
+  color: var(--text-color);
+  border-radius: 10px;
+  outline: 1px solid var(--nav-bg);
+  border: 1px solid var(--border-color);
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.errorInput {
+  border: 1px solid var(--error-color);
+}
+
+.errorInput:focus {
+  outline: 1px solid var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.error {
+  color: var(--error-color);
+  padding-left: 5px;
+  margin-top: -6px;
+}
+
+.error:before {
+  content: "⚠ ";
+}
+
+@media (max-width: 991px) {
+  .leftSide {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    padding: 30px 20px;
+    border-radius: 8px;
+  }
+
+  .oneLineInputs {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

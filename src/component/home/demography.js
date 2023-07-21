@@ -8,6 +8,8 @@ import { ClipLoader } from "react-spinners";
 import Populations from "@/component/home/populations";
 import Dependence from "@/component/home/dependence";
 import InputErrors from "@/component/home/input-errors";
+import { analytics } from "@/app/layout";
+import { logEvent } from "firebase/analytics";
 
 const Demography = () => {
   const [loading, setLoading] = useState(false);
@@ -43,12 +45,18 @@ const Demography = () => {
       if (response.status === 200) {
         const res = await response.json();
         setData(res);
+        logEvent(analytics, "searched");
       } else {
         toastHandler("Something went wrong, Please try again later!", "error");
       }
     } catch (e) {
-      console.log(e);
-      toastHandler("Something went wrong, Please try again later!", "error");
+      if (e.response) {
+        toastHandler("Something went wrong, Please try again later!", "error");
+      } else if (e.request) {
+        toastHandler("No Internet connection!", "warning");
+      } else {
+        toastHandler("Something went wrong, Please try again later!", "error");
+      }
     }
 
     setLoading(false);

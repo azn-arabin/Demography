@@ -30,7 +30,7 @@ export default function MyChart({ calculatedPopulations, currentYear, year }) {
           {`${currentYear} -- ${year}`}
         </h3>
         <div className={styles.chartInput}>
-          <label>Chart Type</label>
+          <label>Chart type:</label>
           <select
             className={styles.input}
             defaultValue={"bar"}

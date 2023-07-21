@@ -9,9 +9,20 @@ import Navbar from "@/component/common/navbar";
 import Container from "@/component/common/container";
 import React from "react";
 import Footer from "@/component/common/footer";
+import { firebaseConfig } from "@/config/firebase";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
+
+const app = initializeApp(firebaseConfig);
+
+export let analytics;
+
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app);
+}
 
 export const metadata = {
   title: "Population Prediction in Bangladesh - A Demographic Study",

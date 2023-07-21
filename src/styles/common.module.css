@@ -109,6 +109,15 @@
   right: -20%;
 }
 
+.link {
+  color: var(--selected-color);
+  transition: all 0.35s ease;
+}
+
+.link:hover {
+  color: var(--toggle-hover);
+}
+
 .footer {
   text-align: center;
   font-size: 14px;

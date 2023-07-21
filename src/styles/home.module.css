@@ -33,7 +33,7 @@
 .input {
   width: 250px;
   padding: 10px 12px;
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--second-bg);
   border-radius: 10px;
   font-size: 18px;
@@ -44,8 +44,8 @@
 .input:focus {
   color: var(--text-color);
   border-radius: 10px;
-  outline: 2px solid var(--nav-bg);
-  border: 2px solid var(--border-color);
+  outline: 1px solid var(--nav-bg);
+  border: 1px solid var(--border-color);
 }
 
 .input::placeholder {
@@ -53,12 +53,12 @@
 }
 
 .errorInput {
-  border: 2px solid red;
+  border: 1px solid var(--error-color);
 }
 
 .errorInput:focus {
-  outline: 2px solid red;
-  border: 2px solid red;
+  outline: 1px solid var(--error-color);
+  border: 1px solid var(--error-color);
 }
 
 .errorsContainer {
@@ -71,7 +71,7 @@
 }
 
 .error {
-  color: red;
+  color: var(--error-color);
   padding-left: 5px;
 }
 
@@ -135,14 +135,22 @@
 
 .chartInput {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   z-index: 0;
 }
 
 .chartInput > select {
   width: auto;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.chartInput > select:focus {
+  border: none;
+  outline: none;
 }
 
 .rechartsWrapper {
@@ -267,6 +275,12 @@
 
   .dContents > div {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .dContent {
+    padding: 15px;
   }
 }
 

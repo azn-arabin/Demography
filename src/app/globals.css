@@ -29,6 +29,7 @@ a {
   --border-color: #dddddd;
   --scrollbar-bg: #f0f0f0;
   --scrollbar-thumb: #c0c0c0;
+  --error-color: #dc3545;
   background-color: var(--main-bg);
   color: var(--text-color);
 }

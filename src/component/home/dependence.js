@@ -37,8 +37,8 @@ const Dependence = () => {
             <h3>Limitations</h3>
           </div>
           <span className={styles.dContent}>
-            The population projections are based on assumptions and available
-            data, and may not reflect accurate figures.
+            The population projections are based on available data, and may not
+            reflect accurate figures.
           </span>
           <span className={styles.dContent}>
             The population projections are limited to the time frame of 2011 to

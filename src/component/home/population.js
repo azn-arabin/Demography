@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "@/styles/home.module.css";
-import numeral from "numeral";
+import CountUpAnimation from "@/component/home/count-up-animation";
 
 const Population = ({ title, children, predictor }) => {
   return (
     <div className={styles.population}>
       <span>{title}</span>
-      <h2>{numeral(children).format("0,0,0,000")}</h2>
+      <CountUpAnimation endValue={children} startValue={80000000} />
       <span>{predictor}</span>
     </div>
   );
