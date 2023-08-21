@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/styles/home.module.css";
 import {
   CartesianGrid,
@@ -14,13 +14,55 @@ import {
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import numeral from "numeral";
+import Division from "@/component/home/division";
+import CustomTooltip from "@/component/home/custom-tooltip";
 
-export default function MyChart({ calculatedPopulations, currentYear, year }) {
+export default function MyChart({
+  predictedPopulations,
+  currentYear,
+  year,
+  districtNames,
+  divisionNames,
+  child,
+}) {
   const [chartType, setChartType] = useState("bar");
+  const [district, setDistrict] = useState([]);
+  const [division, setDivision] = useState([]);
+  const [piChYear, setPiChYear] = useState(0);
+  const [piChPopulations, setPiChPopulations] = useState(0);
 
   const maxPopulation = Math.max(
-    ...calculatedPopulations.map((data) => data.populations)
+    ...predictedPopulations.map((data) => data.populations)
   );
+
+  const populations = predictedPopulations.map((data) => {
+    return {
+      year: data.year,
+      populations: data.populations,
+    };
+  });
+
+  const handleDistrictDivision = (pop) => {
+    const districtData = districtNames.map((district, index) => ({
+      name: district.name,
+      population: pop.district[index],
+      division: district.division,
+    }));
+    setDistrict(districtData);
+    const divisionData = divisionNames.map((name, index) => ({
+      name,
+      population: pop.division[index],
+    }));
+    setDivision(divisionData);
+    setPiChPopulations(pop.populations);
+    setPiChYear(pop.year);
+  };
+
+  useEffect(() => {
+    handleDistrictDivision(
+      predictedPopulations[predictedPopulations.length - 1]
+    );
+  }, [predictedPopulations]);
 
   return (
     <div className={styles.chartContainer}>
@@ -48,7 +90,7 @@ export default function MyChart({ calculatedPopulations, currentYear, year }) {
             margin={{ left: 2, right: 10, top: 10, bottom: 5 }}
             padding={{ top: 10 }}
             height={400}
-            data={calculatedPopulations}
+            data={populations}
           >
             <XAxis
               dataKey="year"
@@ -62,21 +104,25 @@ export default function MyChart({ calculatedPopulations, currentYear, year }) {
               }
               tick={{ fill: "var(--text-color)" }}
             />
-            <Tooltip
-              labelFormatter={(label) => `Year: ${label}`}
-              formatter={(value) => numeral(value).format("0,0")}
-            />
+            <Tooltip content={<CustomTooltip />} />
             <CartesianGrid
               stroke="var(--selected-color)"
               strokeDasharray="5 5"
             />
-            <Bar dataKey="populations" fill="var(--nav-bg)" barSize={30} />
+            <Bar
+              dataKey="populations"
+              fill="var(--nav-bg)"
+              barSize={30}
+              onClick={(data, index) =>
+                handleDistrictDivision(predictedPopulations[index])
+              }
+            />
           </BarChart>
         ) : (
           <LineChart
             width={1050}
             height={400}
-            data={calculatedPopulations}
+            data={populations}
             margin={{ top: 10, right: 10, bottom: 5, left: 2 }}
           >
             <Line
@@ -84,7 +130,10 @@ export default function MyChart({ calculatedPopulations, currentYear, year }) {
               dataKey="populations"
               stroke="var(--nav-bg)"
               strokeWidth={3}
-              dot={{ fill: "var(--selected-color)", r: 5 }}
+              dot={{
+                fill: "var(--selected-color)",
+                r: 5,
+              }}
             />
             <CartesianGrid
               stroke="var(--selected-color)"
@@ -98,16 +147,17 @@ export default function MyChart({ calculatedPopulations, currentYear, year }) {
               }
               tick={{ fill: "var(--text-color)" }}
             />
-            <Tooltip
-              labelFormatter={(label) => `Year: ${label}`}
-              formatter={(value) => [
-                numeral(value).format("0,0"),
-                "Population",
-              ]}
-            />
+            <Tooltip content={<CustomTooltip />} />
           </LineChart>
         )}
       </div>
+      <Division
+        division={division}
+        district={district}
+        year={piChYear}
+        populations={piChPopulations}
+        child={child}
+      />
     </div>
   );
 }

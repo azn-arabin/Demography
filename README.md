@@ -32,6 +32,8 @@ visualization and population trend analysis.
 
 - Dynamic population projections based on user inputs
 - Interactive graph with population trends visualization
+- Facilitates population projection for divisions and districts using
+  interactive pie charts.
 - Customizable chart types (bar chart and line chart)
 - Contact page to send feedback and inquiries
 - Seamless client-side navigation using Next.js
@@ -74,7 +76,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Credits
 
-Supervisor: [Prof. Dr. Mamun-Ur-Rashid Khandker](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
+Supervisor: [....](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
 
 ## Contact
 

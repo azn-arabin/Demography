@@ -6,7 +6,7 @@ const Population = ({ title, children, predictor }) => {
   return (
     <div className={styles.population}>
       <span>{title}</span>
-      <CountUpAnimation endValue={children} startValue={80000000} />
+      <CountUpAnimation endValue={children} startValue={65000000} />
       <span>{predictor}</span>
     </div>
   );

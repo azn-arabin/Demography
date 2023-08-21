@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/home.module.css";
 import { useForm } from "react-hook-form";
-import BarChart from "@/component/home/chart";
+import Chart from "@/component/home/chart";
 import { toast, ToastContainer } from "react-toastify";
 import { ClipLoader } from "react-spinners";
 import Populations from "@/component/home/populations";
@@ -72,7 +72,7 @@ const Demography = () => {
             <label>Child Per Couple*</label>
             <input
               type="number"
-              step="0.01"
+              step="0.001"
               {...register("child", { required: true, min: 0.5, max: 9 })}
               placeholder={"Average child..."}
               className={`${styles.input} ${
@@ -138,16 +138,22 @@ const Demography = () => {
       {data ? (
         <>
           <Populations
-            p2011={data.p2011}
-            p2022={data.year >= 2022 ? data.p2022 : false}
+            p2011={data.predictedPopulations[0].populations}
+            p2022={data.p2022}
             year={data.year}
             child={data.child}
-            updatedPopulations={data.updatedPopulations}
+            updatedPopulations={
+              data.predictedPopulations[data.predictedPopulations.length - 1]
+                .populations
+            }
           />
-          <BarChart
-            calculatedPopulations={data.calculatedPopulations}
+          <Chart
+            predictedPopulations={data.predictedPopulations}
             currentYear={data.currentYear}
             year={data.year}
+            child={data.child}
+            districtNames={data.districtNames}
+            divisionNames={data.divisionNames}
           />
         </>
       ) : (

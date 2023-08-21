@@ -12,7 +12,7 @@ const Introductions = () => {
             "http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile"
           }
         >
-          Prof. Dr. Mamun-ur-Rashid Khandker,
+          ......,
         </ExternalLink>
       </Introduction>
       <Introduction title={"Student"}>

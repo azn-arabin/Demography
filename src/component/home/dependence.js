@@ -20,11 +20,12 @@ const Dependence = () => {
             <h3>Capabilities</h3>
           </div>
           <span className={styles.dContent}>
-            Provides population estimation for Bangladesh based on user inputs.
-          </span>
-          <span className={styles.dContent}>
             Visualizes population trends through an interactive graph from 2011
             to the selected year.
+          </span>
+          <span className={styles.dContent}>
+            Facilitates population projection for divisions and districts using
+            interactive pie charts.
           </span>
           <span className={styles.dContent}>
             Provides a user-friendly interface for seamless exploration of

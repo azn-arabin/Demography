@@ -116,6 +116,7 @@
 
 .link:hover {
   color: var(--toggle-hover);
+  text-decoration: underline;
 }
 
 .footer {
