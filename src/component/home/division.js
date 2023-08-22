@@ -15,6 +15,7 @@ const District = ({ district, division, year, child, populations }) => {
     "#FF851B",
     "#B10DC9",
     "#39CCCC",
+    "#FFDC00",
   ];
 
   const divisionColorMapping = {};

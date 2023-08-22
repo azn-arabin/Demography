@@ -6,6 +6,7 @@ import {
   setDeathRates,
   setDistricts,
   setInfantMortality,
+  setMigrations,
   setTotalPopulation,
 } from "@/helper/demography/calculations";
 
@@ -60,6 +61,12 @@ const demography = async (req, res) => {
     setInfantMortality(
       mortalityData.infantMortality.map((item) => item.amount)
     );
+
+    const migrationsData = await db
+      .collection("population")
+      .findOne({}, { projection: { "migrations.amount": 1, _id: 0 } });
+
+    setMigrations(migrationsData.migrations.map((item) => item.amount));
 
     const districtsData = await db
       .collection("population")

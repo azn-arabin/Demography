@@ -36,9 +36,10 @@ const Description = () => {
         completion of this endeavor.
       </Section>
       <Section title={"Algorithm"}>
-        The algorithm starts by gathering essential data from reputable sources.
-        Death rates and infant mortality rates spanning 2011 to 2101, averaged
-        every five years, are collected from{" "}
+        The algorithm initiates its process by gathering essential data from
+        reputable sources, which includes death rates and infant mortality rates
+        covering the extensive period from 2011 to 2101. These rates, averaged
+        every five years, are meticulously collected from{" "}
         <ExternalLink
           href={
             "https://www.macrotrends.net/countries/BGD/bangladesh/death-rate"
@@ -46,49 +47,53 @@ const Description = () => {
         >
           MacroTrends
         </ExternalLink>
-        . The algorithm also integrates suicide rates from period of 2011-2023
-        from same source. Total population figures and population distribution
-        by age groups (e.g., 0-4, 5-9) are sourced from trusted platforms,
-        including{" "}
+        . Additionally, the algorithm incorporates suicide rates spanning the
+        period of 2011 to 2023 from the same source. Crucial insights are drawn
+        from total population figures and population distribution across various
+        age groups, such as 0-4, 5-9, sourced from{" "}
         <ExternalLink
           href={"https://en.wikipedia.org/wiki/Demographics_of_Bangladesh"}
         >
           Wikipedia
         </ExternalLink>
-        . District and division data of 2011{" "}
+        . A significant foundation for geographic understanding is established
+        through the district and division data of the{" "}
         <ExternalLink
           href={
             "https://www.bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census"
           }
         >
-          Bangladesh census
-        </ExternalLink>{" "}
-        provide a crucial foundation for geographic insights. The core of the
-        algorithm revolves around simulating population dynamics over time. Key
-        age groups, such as 20-24, representing new couples, are identified as
-        vital segments for projecting future population growth. When a user
-        specifies a target year (between 2012 and 2101) and the desired number
-        of children per couple, the algorithm embarks on a series of iterative
-        steps. Iteration and Calculation For each iteration, the algorithm
-        calculates trends over a five-year period. For instance, if the user
-        selects 2101 as the target year and inputs 2 children per couple, the
-        algorithm iterates from 2011 to 2101. In the initial five years
-        (2011-2015), the algorithm estimates the child population by multiplying
-        the couple population (half of age group: 20-24) by the user-provided
-        child. Infant mortality rates are considered, and child populations are
-        adjusted accordingly. Similarly, death rates are factored in, affecting
-        the overall population. To ensure accurate modeling, the algorithm
-        facilitates age group shifts. People within specific age ranges are
-        moved to adjacent groups as years progress. For instance, individuals in
-        the 15-19 age group transition to the 20-24 age group, and children born
-        during the iteration enter the 0-4 age group. This meticulous process
-        maintains the continuity of age distributions. Predictive Projections
-        The iterative process is repeated for each subsequent five-year
-        interval, continuously updating population figures and age group
-        distributions. The algorithm's rigorous calculations provide a
-        comprehensive perspective on how factors like birth rates, death rates,
-        infant mortality, and age distributions interact over time. The
-        prediction for division and districts works at the same way.
+          2011 Bangladesh census
+        </ExternalLink>
+        .<br /> <br /> Central to the algorithm's operation is the simulation of
+        population dynamics across time. The initial step involves the division
+        of the population of each district into specific age groups based on the
+        percentage distribution of the total population within those groups. Key
+        age segments, notably the 20-24 age group of each that represents
+        potential new couples, are identified as pivotal contributors to future
+        population growth. <br /> <br /> When a user specifies a target year
+        within the range of 2012 to 2101 and indicates the desired number of
+        children per couple, the algorithm embarks on a series of iterative
+        steps. These iterations span from 2011 to the user-specified target
+        year, allowing for a comprehensive view of population changes. For
+        instance, if the user selects the year 2101 as the target and inputs a
+        desired average of 2 children per couple, the algorithm iterates through
+        every five-year interval. <br /> <br /> During each iteration, the
+        algorithm calculates trends, estimates child populations by multiplying
+        the population of the 20-24 age group (half of the group) by the
+        user-provided number of children. Adjustments are made based on infant
+        mortality rates, and the child populations are further refined.
+        Moreover, the influence of death rates and migration rates on the
+        overall population is factored in. To ensure a realistic model, the
+        algorithm facilitates shifts of individuals between adjacent age groups
+        as the years progress. For instance, individuals within the 15-19 age
+        group transition to the 20-24 age group, while newly born children are
+        included in the 0-4 age group. Suicide and migration rates are
+        considered for the 15-19 age group. This meticulous process ensures that
+        age distributions remain consistent and coherent throughout the
+        iterative calculations. The algorithm's predictive power is rooted in
+        its ability to continuously update population figures and age group
+        distributions over the projected timeline.
       </Section>
       <Section title={"Future Scope"}>
         The project forms the basis for prospective advancements and exploration

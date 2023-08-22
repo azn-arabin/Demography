@@ -13,7 +13,7 @@ const InputErrors = ({ errors }) => {
         )}
         {errors.child?.type === "max" && (
           <span className={styles.error}>
-            Child must be less than 9 or equal to 9
+            Child must be less than or equal to 9
           </span>
         )}
       </div>
