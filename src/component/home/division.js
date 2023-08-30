@@ -5,19 +5,9 @@ import CustomTooltip from "@/component/home/custom-tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge } from "@fortawesome/free-solid-svg-icons";
 import Population from "@/component/home/population";
+import { divisionColors } from "@/constant";
 
 const District = ({ district, division, year, child, populations }) => {
-  const divisionColors = [
-    "#FF5733",
-    "#0074D9",
-    "#FFC300",
-    "#3D9970",
-    "#FF851B",
-    "#B10DC9",
-    "#39CCCC",
-    "#FFDC00",
-  ];
-
   const divisionColorMapping = {};
   division.forEach((entry, index) => {
     divisionColorMapping[entry.name] = divisionColors[index];

@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import numeral from "numeral";
 import Division from "@/component/home/division";
 import CustomTooltip from "@/component/home/custom-tooltip";
+import DensityMap from "@/component/home/map";
 
 export default function MyChart({
   predictedPopulations,
@@ -151,6 +152,12 @@ export default function MyChart({
           </LineChart>
         )}
       </div>
+      <DensityMap
+        division={division}
+        year={piChYear}
+        child={child}
+        populations={piChPopulations}
+      />
       <Division
         division={division}
         district={district}

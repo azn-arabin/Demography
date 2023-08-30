@@ -24,12 +24,12 @@ const Dependence = () => {
             to the selected year.
           </span>
           <span className={styles.dContent}>
-            Facilitates population projection for divisions and districts using
-            interactive pie charts.
+            Explore Intricate Population Density Patterns with an Interactive
+            Map Visualization Experience.
           </span>
           <span className={styles.dContent}>
-            Provides a user-friendly interface for seamless exploration of
-            demographic information.
+            Facilitates population projection for divisions and districts using
+            interactive pie charts.
           </span>
         </div>
         <div>
@@ -38,8 +38,8 @@ const Dependence = () => {
             <h3>Limitations</h3>
           </div>
           <span className={styles.dContent}>
-            The population projections are based on available data, and may not
-            reflect accurate figures.
+            The population projections are based on assumption and available
+            data, and may not reflect accurate figures.
           </span>
           <span className={styles.dContent}>
             The population projections are limited to the time frame of 2011 to
