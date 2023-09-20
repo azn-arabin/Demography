@@ -12,12 +12,12 @@ const Introductions = () => {
             "http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile"
           }
         >
-          ......,
+          Dr. Mamun - Ur - Rashid Khandker,
         </ExternalLink>
       </Introduction>
       <Introduction title={"Student"}>
         <ExternalLink href={"https://arabin.vercel.app"}>
-          Md. Asaduzzaman (Arabin),
+          Md. Asaduzzman (Arabin),
         </ExternalLink>
       </Introduction>
     </div>

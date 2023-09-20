@@ -22,6 +22,7 @@ visualization and population trend analysis.
 - [React Hook Form](https://react-hook-form.com/)
 - [Framer Motion](https://www.framer.com/api/motion)
 - [Recharts](https://recharts.org/)
+- [React Leaflet](https://react-leaflet.js.org/)
 - [React Toastify](https://www.npmjs.com/package/react-toastify)
 - [FontAwesome](https://fontawesome.com/)
 - [numeral.js](http://numeraljs.com/)
@@ -32,8 +33,9 @@ visualization and population trend analysis.
 
 - Dynamic population projections based on user inputs
 - Interactive graph with population trends visualization
+- Population Density Patterns with an Interactive Map
 - Facilitates population projection for divisions and districts using
-  interactive pie charts.
+  interactive two level pie charts.
 - Customizable chart types (bar chart and line chart)
 - Contact page to send feedback and inquiries
 - Seamless client-side navigation using Next.js
@@ -76,12 +78,12 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Credits
 
-Supervisor: [....](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
+Supervisor: [Dr. Mamun - Ur - Rashid Khandker](http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile) (Department of EEE, University of Rajshahi)
 
 ## Contact
 
 For any questions, feedback, or inquiries, please use the contact page
 in the application to get in touch with the project team or
-feel free to reach out to me [Md. Asaduzzaman (Arabin)](mailto:aznarabin@gmail.com).
+feel free to reach out to me [Md. Asaduzzman (Arabin)](mailto:aznarabin@gmail.com).
 
 ---

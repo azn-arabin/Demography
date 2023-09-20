@@ -29,7 +29,7 @@ const Description = () => {
             "http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile"
           }
         >
-          .......,
+          Dr. Mamun - Ur - Rashid Khandker,
         </ExternalLink>{" "}
         for his valuable guidance and support throughout the project. His
         expertise and encouragement have been instrumental in the successful
