@@ -16,7 +16,7 @@ const Description = () => {
         at{" "}
         <ExternalLink href={"https://www.ru.ac.bd/"}>
           University of Rajshahi.
-        </ExternalLink>
+        </ExternalLink>{" "}
         The project aims to provide a user-friendly platform for projecting the
         total population of Bangladesh based on user inputs. The application
         utilizes Next.js, React, and various libraries to offer interactive
@@ -29,9 +29,9 @@ const Description = () => {
             "http://rurfid.ru.ac.bd/ru_profile/public/teacher/25400487/profile"
           }
         >
-          Dr. Mamun - Ur - Rashid Khandker,
+          Prof. Dr. Mamun - Ur - Rashid Khandker
         </ExternalLink>{" "}
-        for his valuable guidance and support throughout the project. His
+        sir for his valuable guidance and support throughout the project. His
         expertise and encouragement have been instrumental in the successful
         completion of this endeavor.
       </Section>

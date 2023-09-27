@@ -6,19 +6,25 @@ let infantMortality = [];
 let migrations = [];
 let districts = [];
 
-const coupleYear = 20;
-
 let predictedData = [];
 
 const shiftPopulations = (child, districtId, rateId) => {
-  let index = Math.floor(coupleYear / 5);
+  let index = 6;
+
+  while (index > 4) {
+    districts[districtId].ageGroups[index] =
+      districts[districtId].ageGroups[index - 1] +
+      (districts[districtId].ageGroups[index - 1] * migrations[rateId]) / 1000;
+    index--;
+  }
 
   // for age group 15-19, considering suicide rate
   districts[districtId].ageGroups[index] =
     districts[districtId].ageGroups[index - 1] -
     (districts[districtId].ageGroups[index - 1] * 3.61) / 100000;
   // for age group 15-19, considering migration rate
-  districts[districtId].ageGroups[index] +=
+  districts[districtId].ageGroups[index] =
+    districts[districtId].ageGroups[index - 1] +
     (districts[districtId].ageGroups[index - 1] * migrations[rateId]) / 1000;
 
   index--;
@@ -40,7 +46,7 @@ const shiftPopulations = (child, districtId, rateId) => {
 const divideAgeGroup = (pop) => {
   const groups = [];
 
-  let index = Math.floor(coupleYear / 5) + 1;
+  let index = 7;
 
   for (let i = 0; i < index; i++) {
     groups.push((pop * totalPopulation[i].percentage) / 100);
@@ -89,12 +95,18 @@ export const calculatePopulations = (year, child) => {
 
   let y = year;
   let i = 0;
-  let index = Math.floor(coupleYear / 5);
   let temp;
 
   while (y >= 5) {
     districts.forEach((district, id) => {
-      let newChild = (district.ageGroups[index] / 2) * child;
+      let newChild =
+        ((0.64 * (district.ageGroups[6] / 2)) / 100) * ((60 * child) / 100);
+      newChild +=
+        ((4 * (district.ageGroups[5] / 2)) / 100) * ((65 * child) / 100);
+      newChild +=
+        ((20.36 * (district.ageGroups[4] / 2)) / 100) * ((65 * child) / 100);
+      newChild += ((63 * (district.ageGroups[3] / 2)) / 100) * child;
+      newChild += ((12 * (district.ageGroups[2] / 2)) / 100) * child;
       newChild -= (infantMortality[i] / 1000) * newChild;
       shiftPopulations(newChild, id, i);
       district.population += newChild;
@@ -109,7 +121,20 @@ export const calculatePopulations = (year, child) => {
 
   if (y) {
     districts.forEach((district) => {
-      let newChild = (y / 5) * (district.ageGroups[index] / 2) * child;
+      let newChild =
+        (y / 5) *
+        ((0.64 * (district.ageGroups[6] / 2)) / 100) *
+        ((60 * child) / 100);
+      newChild +=
+        (y / 5) *
+        ((4 * (district.ageGroups[5] / 2)) / 100) *
+        ((65 * child) / 100);
+      newChild +=
+        (y / 5) *
+        ((20.36 * (district.ageGroups[4] / 2)) / 100) *
+        ((65 * child) / 100);
+      newChild += (y / 5) * ((63 * (district.ageGroups[3] / 2)) / 100) * child;
+      newChild += (y / 5) * ((12 * (district.ageGroups[2] / 2)) / 100) * child;
       newChild -= (infantMortality[i] / 1000) * newChild;
       district.population += newChild;
       temp = district.population;
